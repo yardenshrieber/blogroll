@@ -1,4 +1,11 @@
-<% @author.fields.each_pair do |key, value| %>
-    <h1><%= key %></h1>
-    <%= value %>
-<% end %>
+<h1>Name:</h1>
+<p><%= @author.fields[:name]%></p>
+<h1>Website:</h1>
+<p><%= @author.fields[:website]%></p>
+<h1>Profile Photo:</h1>
+<p><%= @author.fields[:profilePhoto]%></p>
+<h1>Biography:</h1>
+<p><%= @author.fields[:biography]%></p>
+<h1>Created Posts:</h1>
+<p><%= @author.fields[:createdEntries]%></p>
+

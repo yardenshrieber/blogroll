@@ -3,18 +3,17 @@
 </style>
 
 <% $contentful.entries(content_type: '2wKn6yEnZewu2SCCkus4as').each do |post| %>
-    <div id="<%= post.fields[:slug] %>">
+    <div class="tab <%= post.sys[:id] %>" id="<%= post.fields[:slug] %>">
       <h1>Author:</h1>
-      <a style="display:block;" href=<%= "/authors/#{post.fields[:author]}" %>> <%= post.fields[:author][:name] %></a>
-    <% post.fields.each_pair do |key, value| %>
-        <div class="post-<%= key %>">
-        <h1><%= key.to_s %></h1>
-        <%= value.to_s %>
-        </div>
-    <% end %>
-    <h1>Link:</h1>
+      <a style="display:block;" href="/authors/<%= post.fields[:author].first.sys[:id] %>"><%= post.fields[:author].first.fields[:name] %> </a>
+      <% post.fields.each_pair do |key, value| %>
+          <div class="post-<%= key %>">
+            <h1><%= key.to_s %></h1>
+            <%= value.to_s %>
+          </div>
+      <% end %>
+      <h1>Link:</h1>
       <a href=<%= "/posts/#{post.sys[:id]}" %>> <%= "/posts/#{post.sys[:id]}" %></a>
-
     </div>
 <% end %>
 

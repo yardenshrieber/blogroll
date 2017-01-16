@@ -1,4 +1,19 @@
-<% @post.fields.each_pair do |key, value| %>
-    <h1><%= key %></h1>
-    <%= value %>
-<% end %>
+<h1>Title</h1>
+<p><%= @post.fields[:title]%></p>
+<h1>slug</h1>
+<p><%= @post.fields[:slug]%></p>
+<h1>author</h1>
+<p><%= @post.fields[:author]%></p>
+<h1>body</h1>
+<p><%= @post.fields[:body]%></p>
+<h1>category</h1>
+<p><%= @post.fields[:category]%></p>
+<h1>tags</h1>
+<p><%= @post.fields[:tags]%></p>
+<h1>Profile image:</h1>
+<p><%= @post.fields[:featuredImage]%></p>
+<h1>tags</h1>
+<p><%= @post.fields[:tags]%></p>
+<h1>Date</h1>
+<p><%= @post.fields[:date]%></p>
+<span>title:<%= @post.fields[:author].to_s %></span>
