@@ -1,0 +1,9 @@
+<% $contentful.entries(content_type: '1kUEViTN4EmGiEaaeC6ouY').each do |author| %>
+    <% author.fields.each_pair do |key, value| %>
+        <h1><%= key.to_s %></h1>
+        <%= value %>
+    <% end %>
+    <h1>Link:</h1>
+    <a href=<%= "/authors/#{author.sys[:id]}" %>> <%= "/posts/#{author.sys[:id]}" %></a>
+<% end %>
+
